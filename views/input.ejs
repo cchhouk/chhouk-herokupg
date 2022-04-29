@@ -15,9 +15,9 @@
       // Cancel default behavior of sending a synchronous POST request
       e.preventDefault();
       // Create a FormData object, passing the form as a parameter
-      const formData = new FormData(e.target);
+      const formData = new FormData(e.target); // Get all data from the form
       // Send form data to the server with an asynchronous POST request
-      fetch("/input", {
+      fetch("/input", { // Calling our input, going into index.js and look for a POST resource
         method: "POST",
         body: formData
       })
@@ -33,7 +33,7 @@
         .catch(err => {
             document.getElementById("message").textContent = `Error: ${err.message}`;
         });
-    });
-    </script>
+    }); // Need to add a GET and a POST into index.js
+    </script> 
 
 <%- include("_footer") -%>
